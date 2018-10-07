@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="js/url.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/goodslist.js" type="text/javascript" charset="utf-8"></script>
+	<title>订单查询</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		section{
+			width: 100%;
+		}
+		.container{
+			width: 100%;
+		}
+		.left_1{
+			width: 100%;
+			height: 800px;
+			background: #429BFF;
+		}
+		.left_1 li{
+			list-style: none;
+			width: 100%;
+			color: #FFFFFF;
+			text-align: center;
+			height: 100px;
+			border-bottom: 1px solid #EEEEEE;
+		}
+		.left_1 li span{
+			font-size: 45px;
+			margin: 20px 0 0 0;
+		}
+		.left_1 li:nth-child(1){
+			background: #DD375F !important;
+		}
+		
+		
+		.left_2{
+			border-bottom: 3px solid #EEEEEE;
+		}
+		
+		.left_3{
+			width: 100%;
+			text-align: center;
+		}
+		.left_3 tr{
+			/*background: #efefef;*/
+			border: 1px solid #EEEEEE;
+			font-size: 18px;
+			margin: 5px 0;
+		}
+		.left_3 th,.left_3 td{
+			padding: 8px;
+			text-align: center;
+			border: 1px solid #EEEEEE;
+		}
+		.shu{
+			text-align: right;
+			margin: 5px 0;
+		}
+		.jiezhang{
+			color: #FFFFFF;
+			background: #67C23A;
+		}
+		
+		
+		.left_4{
+			width: 100%;
+			text-align: center;
+		}
+		.left_4 tr{
+			border: 1px solid #EEEEEE;
+			font-size: 18px;
+			margin: 5px 0;
+		}
+		.left_4 th{
+			background: #F8F8D9;
+		}
+		.left_4 th,.left_3 td{
+			padding: 8px;
+			text-align: center;
+			border: 1px solid #EEEEEE;
+		}
+		
+		.div_right1{
+			height: 900px;
+			background: #F0F0F0;
+			padding: 0;
+			border-left: 1px solid #000000;
+		}
+		.div_right{
+			width: 110%;
+		}
+		.div_right>h5{
+			width: 100%;
+			height: 40px;
+			border-bottom: 1px solid #EEEEEE;
+			background: #F9FAFC;
+			line-height: 40px;
+			margin: 0;
+			padding: 0 10px;
+		}
+		.div_right p{
+			display: block;
+			background: #FFFFFF;
+			padding: 0 10px;
+			height: 40px;
+			line-height: 40px;
+			margin: 8px;
+		}
+		.div_right p span{
+			color: #2AABD2;
+			cursor: pointer;
+		}
+		.jieshao{
+			width: 100%;
+			padding-bottom: 100px;
+		}
+		.jieshao p{
+			float: left;
+		}
+		.jieshao p>span{
+			color: #000000;
+		}
+		
+		.jieshao1{
+			width: 100%;
+			padding: 0 10px;
+		}
+		.img{
+			width: 220px;
+			height: 87px;
+			background: #FFFFFF;
+			float: left;
+			margin: 10px 40px 0 0;
+			cursor: pointer;
+		}
+		.img img{
+			width: 39%;
+			float: left;
+		}
+		.img p{
+			margin: 10px;
+			float: left;
+			color: red;
+		}
+		
+		
+		.shanchu{
+			color: red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+					<div class="text-left left_1">
+						<li><span class="glyphicon glyphicon-user "></span><br/>收银</li>
+						<li><span class="glyphicon glyphicon-sunglasses"></span><br/>会员</li>
+						<li><span class="glyphicon glyphicon-inbox"></span><br/>库存</li>
+						<li><span class="glyphicon glyphicon-adjust"></span><br/>换班</li>
+						<li><span class=" glyphicon glyphicon-list-alt "></span><br/>报表</li>
+						<li><span class=" glyphicon glyphicon-qrcode "></span><br/>辅助</li>
+						<li><span class="glyphicon glyphicon-trash"></span><br/>退出</li>
+					</div>
+					
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<div>
+					  	<ul class="nav nav-tabs left_2" role="tablist">
+					    	<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">点餐</a></li>
+					    	<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">订单列表</a></li>
+					  	</ul>
+						
+					  	<div class="tab-content">
+					    	<div role="tabpanel" class="tab-pane active" id="home">
+					    		<table class="left_3">
+									<tr>
+										<th>商品</th>
+										<th>数量</th>
+										<th>金额</th>
+										<th>操作</th>
+									</tr>
+								</table>
+								<p class="shu">数量：<span>0</span>总价：<span>0</span>元</p>
+								<div class="text-center">
+									<input type="button" class="btn btn-danger" name="" id="qingkong" value="清空" />
+					    			<input type="button" class="btn bg-info jiezhang" name="" id="jieshuan" value="结账" />
+								</div>
+					    		
+					    		
+					    	</div>
+					    	<div role="tabpanel" class="tab-pane" id="profile">
+					    		<div id="suibian">
+					    			<p>订单编号：<span>hshashashasasashajshajsh</span>&nbsp;&nbsp;&nbsp;&nbsp;<a>订单总价：<span id="span">0</span>元</a></p>
+					    			<table class="left_4">
+									<tr>
+										<th>商品名称</th>
+										<th>商品数量</th>
+										<th>商品金额</th>
+									</tr>
+								</table>
+					    		</div>
+					    	</div>
+					  	</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 div_right1">
+					<div class="div_right">
+						<h5>常用商品</h5>
+						<div class="jieshao">
+							<p><span>香辣鸡腿堡</span>&nbsp;&nbsp; <span>￥<span class="">18</span>元</span></p>
+							<p><span>川香鸡腿堡</span>&nbsp;&nbsp; <span>￥<span class="">16</span>元</span></p>
+							<p><span>番茄炒蛋盖饭</span>&nbsp;&nbsp; <span>￥<span class="">18</span>元</span></p>
+							<p><span>鸡排饭</span>&nbsp;&nbsp; <span>￥<span class="">21</span>元</span></p>
+							<p><span>香辣鸡翅</span>&nbsp;&nbsp; <span>￥<span class="">8</span>元</span></p>
+							<p><span>可乐</span>&nbsp;&nbsp; <span>￥<span class="">4</span>元</span></p>
+							<p><span>橙汁</span>&nbsp;&nbsp; <span>￥<span class="">4</span>元</span></p>
+						</div>
+					</div><br />
+					
+					<div class="jieshao1">
+						<ul class="nav nav-tabs" role="tablist">
+						   <li role="presentation" class="active"><a href="#home1" aria-controls="home1" role="tab" data-toggle="tab">汉堡</a></li>
+						   <li role="presentation"><a href="#profile1" aria-controls="profile1" role="tab" data-toggle="tab">主食</a></li>
+						   <li role="presentation"><a href="#messages1" aria-controls="messages1" role="tab" data-toggle="tab">饮料</a></li>
+						</ul>
+					  
+						<div class="tab-content">
+						   <div role="tabpanel" class="tab-pane active" id="home1">
+							   	<div class="img">
+							   		<img src="img/pos001.jpg" />
+							   		<p><span>香辣鸡腿堡</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos002.jpg" />
+							   		<p><span>香辣鸡腿堡</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos004.jpg"/>
+							   		<p><span>川香鸡腿堡</span><br/><span>￥<span class="">16</span>元</span></p>
+							   	</div>
+						   </div>
+						   <div role="tabpanel" class="tab-pane" id="profile1">
+						   		<div class="img">
+							   		<img src="img/pos005.jpg"/>
+							   		<p><span>番茄炒蛋盖饭</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos006.jpg"/>
+							   		<p><span>辣子鸡盖饭</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos007.jpg" />
+							   		<p><span>鸡排饭</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos008.jpg" />
+							   		<p><span>香辣牛肉盖饭</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+						   </div>
+						   <div role="tabpanel" class="tab-pane" id="messages1">
+						   		<div class="img">
+							   		<img src="img/pos011.jpg" />
+							   		<p><span>冰水</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos012.jpg" />
+							   		<p><span>可口可乐</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos013.jpg" />
+							   		<p><span>鲜榨柠檬汁</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+							   	<div class="img">
+							   		<img src="img/pos014.jpg" />
+							   		<p><span>咖啡</span><br/><span>￥<span class="">18</span>元</span></p>
+							   	</div>
+						   </div>
+						</div>
+					</div>
+					
+					
+				</div>
+				
+			</div>
+		</div>
+	</section>
+</body>
+</html>

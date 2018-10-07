@@ -1,0 +1,147 @@
+
+*{
+	padding: 0;
+	margin: 0;
+}
+.container-fluid{
+	padding-right: 0px; 
+   	padding-left: 0px; 
+    
+}
+.col-md-1,.col-md-4,.col-md-7{
+	padding-right: 0px; 
+   	padding-left: 0px;
+}
+.daohang ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #429BFF;
+}
+ .daohang ul li{
+ 	 height: 90px;
+ }
+.daohang ul li a{
+    display: block;
+    color: #FFFFFF;
+    font-size:18px ;
+    height: 90px;
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: none;
+}
+ 
+/* 鼠标移动到选项上修改背景颜色 */
+.daohang ul li a.active {
+    background-color: red;
+    color: #FFFFFF;
+}
+.daohang ul li a:hover {
+     background-color: red;
+    color: #FFFFFF;
+}
+/*标签页*/
+/*点餐*/
+.diancan{
+	background: ;
+}
+.biaoqianye-one table{
+	margin-top: 5px;
+	margin-left: 5px;
+	
+}
+.biaoqianye-one th, .biaoqianye-one td{
+	text-align: center;
+}
+.anniu{
+	text-align: center;
+	border: 0px;
+}
+.anniu button{
+	margin-left: 10px;
+	
+}
+/*订单列表*/
+.dingdan{
+	margin-top: 10px;
+	border: 1px solid #C0C0C0;
+	margin-left: 10px;
+	
+	
+}
+.dingdan-one{
+	
+	background: #FBFBFB;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #C0C0C0;
+}
+.dingdan>div p{
+	float:  left;
+	padding-left: 10px;
+}
+.dingdan>div p:nth-child(2){
+	float: right;
+	padding-right: 10px;
+	color: red;
+}
+.dingdan-tuo{
+	
+	
+	margin-right: 10px;
+}
+.dingdan-tuo table tbody{
+	border: 1px solid #C0C0C0;
+}
+/*常用商品*/
+.shngpin{
+	margin-left: 5px;
+	background: #F4F4F4;
+	padding-bottom: 45%;
+
+}
+.shngpin>.h5{
+	background: #F9FAFC;
+	margin-top: 0px;
+	line-height: 40px;
+	padding-left: 20px;
+}
+.shngpin-tuijian>ul li{
+	border: 1px solid #D9EDF7;
+	background: #FFFFFF;
+	line-height: 40px;
+	height: 40px;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+.shngpin-tuijian ul li span{
+	color: #31B0D5;
+}
+/*汉堡*/
+
+#hanbao,#zhushi,#yinliao{
+	margin-top: 20px;
+}
+#hanbao ul li,#yinliao ul li,#zhushi ul li{
+	background: #FFFFFF;
+	border: 1px solid #ccc;
+	margin-left: 20px;
+	
+}
+.shiwu img{
+	width: 100px;
+}
+.shiwu{
+	overflow: hidden;
+	
+}
+.shiwu div:nth-child(1){
+	padding: 5px 5px;
+	float: left;
+}
+.shiwu div:nth-child(2){
+	float: left;
+	
+}
+
+
